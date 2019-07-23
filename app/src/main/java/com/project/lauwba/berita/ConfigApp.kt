@@ -1,7 +1,7 @@
 package com.project.lauwba.berita
 
 object ConfigApp {
-    private val HOST = "http://berita.lauwba.com/"
+    private val HOST = "http://berita.server411.tech/"
     val URL_BERITA_ = HOST + "index.php/json"
     val URL_BERITA_DETAIL = HOST + "index.php/json/get_berita/"
     val URL_GAMBAR = HOST + "assets/gambar/"

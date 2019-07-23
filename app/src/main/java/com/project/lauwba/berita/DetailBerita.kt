@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.text.Html
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
@@ -30,7 +31,7 @@ class DetailBerita : AppCompatActivity() {
         setContentView(R.layout.activity_detail_berita)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setTitle("Detail Berita")
+        title = "Detail Berita"
 
         gambar = findViewById(R.id.gambarBerita)
         tanggal = findViewById(R.id.tanggaBerita)
@@ -80,7 +81,7 @@ class DetailBerita : AppCompatActivity() {
 
                         tanggal.text = content.getString("tgl_berita")
                         judul.text = content.getString("judul")
-                        isi.text = content.getString("isi_berita")
+                        isi.text = Html.fromHtml(content.getString("isi_berita"))
 
                     }
                 } else {
@@ -99,6 +100,6 @@ class DetailBerita : AppCompatActivity() {
                 finish()
             }
         }
-        return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item)
     }
 }
